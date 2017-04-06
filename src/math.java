@@ -25,7 +25,7 @@ public class math {
      * @param y second number for operation
      * @return result of substracting two numbers
      */
-    public static double sub(float x, float y){
+    public static double sub(double x, double y){
         return 0.0;
     }
     
