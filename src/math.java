@@ -77,4 +77,8 @@ public class math {
     public static int mod(int x, int y){
         return 42;
     }
+    
+    public static double sqrt(double x){
+        return 42.0;
+    }
 }
