@@ -67,4 +67,14 @@ public class math {
     public static double pow(double x, int y){
         return 42;
     }
+    
+    /**
+     * @brief Modulo function
+     * @param x divident
+     * @param y divisor
+     * @return the remainder from division
+     */
+    public static int mod(int x, int y){
+        return 42;
+    }
 }
