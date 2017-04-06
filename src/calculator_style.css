@@ -1,0 +1,33 @@
+/*
+    Created on : Apr 6, 2017, 1:08:15 PM
+    Author     : xcrkon00
+*/
+.num:focused {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+}
+AnchorPane {
+    background-color: black;
+}
+
+.del {
+    -fx-background-color: #b2b2b2;
+    -fx-border-color: white;
+}
+.del:hover {
+    -fx-background-color: #e0e0e0;
+}
+.del:pressed {
+    -fx-background-color: #c9c9c9;
+}
+.control {
+    -fx-background-color: #ff992d;
+    -fx-border-color: white;
+    
+}
+.control:hover {
+    -fx-background-color: #feb66b;
+}
+.control:pressed {
+    -fx-background-color: #ff992d;
+}
