@@ -5,8 +5,12 @@
  */
 
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
 /**
  *
@@ -15,6 +19,22 @@ import static org.junit.Assert.*;
 public class mathTest {
     
     public mathTest() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
    /**
@@ -87,7 +107,7 @@ public class mathTest {
         assertEquals(2, math.factorial(2));
         assertEquals(40320, math.factorial(8));
         assertEquals(-40320, math.factorial(-8));
-        assertEquals(2-1, math.factorial(-1));
+        assertEquals(-1, math.factorial(-1));
     }
 
     /**
@@ -112,15 +132,18 @@ public class mathTest {
         System.out.println("mod");
         assertEquals(0, math.mod(1, 1), 0.00);       
         assertEquals(2, math.mod(37, 5), 0.00);
-        assertEquals(9765625, math.mod(2, 5), 0.00);
+        assertEquals(2, math.mod(2, 5), 0.00);
     }
-    
+
+    /**
+     * Test of new_sqrt method, of class math.
+     */
     @Test
-    public void testSqrt() {
+    public void testNew_sqrt() {
         System.out.println("sqrt");
-        assertEquals(2, math.sqrt(4), 0.00);       
-        assertEquals(0, math.sqrt(0), 0.00);
-        assertEquals(2.23606797749979, math.sqrt(5), 0.000000001);
+        assertEquals(2, math.new_sqrt(4), 0.00);       
+        assertEquals(0, math.new_sqrt(0), 0.00);
+        assertEquals(2.23606797749979, math.new_sqrt(5), 0.000000001);
     }
     
 }
