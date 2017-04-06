@@ -1,3 +1,6 @@
+
+import static java.lang.Math.sqrt;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,7 +19,7 @@ public class math {
      * @return result of adding two parameters
      */
     public static double add(double x, double y){
-        return 0.0;
+        return x+y;
     }
     
     /**
@@ -26,7 +29,7 @@ public class math {
      * @return result of substracting two numbers
      */
     public static double sub(double x, double y){
-        return 0.0;
+        return x-y;
     }
     
     /**
@@ -36,7 +39,7 @@ public class math {
      * @return result of multiplying two numbers
      */
     public static double multiply(double x, double y){
-        return 0.0;
+        return x*y;
     }
     
     /**
@@ -46,7 +49,7 @@ public class math {
      * @return result of deviding two numbers
      */
     public static double divide(double x, double y){
-        return 0.0;
+        return x/y;
     }
     
     /**
@@ -55,7 +58,19 @@ public class math {
      * @return value of the factorial
      */
     public static long factorial(long num){
-        return 42;
+        int check = 0;
+        if(num < 0){
+            check = 1;
+            num = -num;
+        }
+        long sum = 1;
+        for (long i = num; i > 0; i--){
+            sum = sum*i;
+        }
+        if(check == 1){
+            sum = -sum;
+        }
+        return sum;
     }
     
     /**
@@ -65,7 +80,11 @@ public class math {
      * @return result of raising x to the power y
      */
     public static double pow(double x, int y){
-        return 42;
+        double sum = 1;
+        for(int i = 0; i < y; i++){
+            sum = sum*x;
+        }
+        return sum;
     }
     
     /**
@@ -75,10 +94,10 @@ public class math {
      * @return the remainder from division
      */
     public static int mod(int x, int y){
-        return 42;
+        return x%y;
     }
     
-    public static double sqrt(double x){
-        return 42.0;
+    public static double new_sqrt(double x){
+        return sqrt(x);
     }
 }
