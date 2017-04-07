@@ -1,5 +1,7 @@
 
+import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
+import java.math.BigDecimal;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,7 +15,7 @@ import static java.lang.Math.sqrt;
  */
 public class math {
     /**
-     * @brief Function will add two numbers.
+     * @brief Function will add two double numbers.
      * @param x first number for operation
      * @param y second number for operation
      * @return result of adding two parameters
@@ -29,7 +31,12 @@ public class math {
      * @return result of substracting two numbers
      */
     public static double sub(double x, double y){
-        return x-y;
+        BigDecimal x2, y2, result ;
+        x2 = new BigDecimal(String.valueOf(x));
+        y2 = new BigDecimal(String.valueOf(y));
+        result = x2.subtract(y2);
+        double res = result.doubleValue();
+        return res;
     }
     
     /**
