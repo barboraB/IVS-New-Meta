@@ -25,6 +25,36 @@ public class math {
     }
     
     /**
+     * @brief Function will add two integer numbers.
+     * @param x first number for operation
+     * @param y second number for operation
+     * @return result of adding two parameters
+     */
+    public static long add(long x, long y){
+        return x+y;
+    }
+    
+    /**
+     * @brief Function will add two numbers - one integer and one double.
+     * @param x first number for operation
+     * @param y second number for operation
+     * @return result of adding two parameters
+     */
+    public static double add(double x, long y){
+        return x+y;
+    }
+    
+    /**
+     * @brief Function will add two numbers - one integer and one double.
+     * @param x first number for operation
+     * @param y second number for operation
+     * @return result of adding two parameters
+     */
+    public static double add(long x, double y){
+        return x+y;
+    }
+    
+    /**
      * @brief Substraction of two numbers
      * @param x first number for operation
      * @param y second number for operation
@@ -40,12 +70,39 @@ public class math {
     }
     
     /**
-     * @brief Function will multiply two numbers.
+     * @brief Function will multiply two double numbers.
      * @param x first number for operation
      * @param y second number for operation
      * @return result of multiplying two numbers
      */
     public static double multiply(double x, double y){
+        return x*y;
+    }
+    /**
+     * @brief Function will multiply two integer numbers.
+     * @param x first number for operation
+     * @param y second number for operation
+     * @return result of multiplying two numbers
+     */
+    public static long multiply(long x, long y){
+        return x*y;
+    }
+    /**
+     * @brief Function will multiply two numbers - one double and one integer.
+     * @param x first number for operation
+     * @param y second number for operation
+     * @return result of multiplying two numbers
+     */
+    public static double multiply(long x, double y){
+        return x*y;
+    }
+    /**
+     * @brief Function will multiply two numbers - one double and one integer.
+     * @param x first number for operation
+     * @param y second number for operation
+     * @return result of multiplying two numbers
+     */
+    public static double multiply(double x, long y){
         return x*y;
     }
     
@@ -94,16 +151,36 @@ public class math {
         return sum;
     }
     
+        /**
+     *
+     * @param x floating point base value
+     * @param y power value
+     * @return result of raising x to the power y
+     */
+    public static int pow(int x, int y){
+        int sum;
+        sum = 1;
+        for(int i = 0; i < y; i++){
+            sum = sum*x;
+        }
+        return sum;
+    }
+    
     /**
      * @brief Modulo function
      * @param x divident
      * @param y divisor
      * @return the remainder from division
      */
-    public static int mod(int x, int y){
+    public static long mod(long x, long y){
         return x%y;
     }
     
+    /**
+     * @brief Sqrt function.
+     * @param x number to be rooted
+     * @return result of sqrt
+     */
     public static double new_sqrt(double x){
         return sqrt(x);
     }
