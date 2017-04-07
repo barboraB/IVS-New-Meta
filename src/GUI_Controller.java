@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,196 +11,266 @@ import javafx.scene.control.TextField;
  * FXML Controller class
  *
  * @author jakub
+ * @version 1.1
+ */
+
+/**
+ * 
+ * @todo Two dots in number
+ *       Two operations in row
+ *       Results of operations in between 2 operations
  */
 public class GUI_Controller implements Initializable {
     
-    String str;
-    double operand_one = 0;
-    double operand_two = 0;
-    int operand_length = 0;
-    int operation = 0;
-    boolean new_operation = false;
+    private String str;
+    private double operand_one;
+    private double operand_two;
+    private int operand_length;
+    private int operation;
+    private boolean new_operation;
     @FXML
     private TextField display;
-    @FXML
-    private Button seven;
-    @FXML
-    private Button eight;
-    @FXML
-    private Button nine;
-    @FXML
-    private Button pow;
-    @FXML
-    private Button DEL;
-    @FXML
-    private Button C;
-    @FXML
-    private Button equal;
-    @FXML
-    private Button zero;
-    @FXML
-    private Button four;
-    @FXML
-    private Button one;
-    @FXML
-    private Button five;
-    @FXML
-    private Button two;
-    @FXML
-    private Button six;
-    @FXML
-    private Button three;
-    @FXML
-    private Button dot;
-    @FXML
-    private Button plus;
-    @FXML
-    private Button minus;
-    @FXML
-    private Button modulo;
-    @FXML
-    private Button sqrt;
-    @FXML
-    private Button multi;
-    @FXML
-    private Button div;
-    @FXML
-    private Button fact;
+
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.new_operation = false;
+        this.operand_length = 0;
+        this.operand_one = 0;
+        this.operand_two = 0;
+        this.operation = 0;
     }    
 
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        if(new_operation == true ) {
-            new_operation = false;
-            display.setText("");
+    private void zeroAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "0");
+    }
+    
+    @FXML
+    private void oneAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "1");
+    }
+    
+    @FXML
+    private void twoAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "2");
+    }
+ 
+    @FXML
+    private void threeAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "3");
+    }
+
+    @FXML
+    private void fourAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "4");
+    }
+
+    @FXML
+    private void fiveAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "5");
+    }
+
+    @FXML
+    private void sixAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "6");
+    }
+    
+    @FXML
+    private void sevenAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "7");
+    }
+
+    @FXML
+    private void eigthAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "8");
+    }
+
+    @FXML
+    private void nineAction(ActionEvent event) {
+        check_operation();
+        display.setText(display.getText() + "9");
+    }
+
+    @FXML
+    private void powAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 5; // POW
+            display.setText(display.getText() + "^");
         }
-        if(event.getSource() == zero ) {
-                display.setText(display.getText() + "0");
+    }
+
+    @FXML
+    private void DELAction(ActionEvent event) {
+        check_operation();
+        if (display.getText() != null && display.getText().length() > 0) {
+            str = display.getText().substring(0,display.getText().length()-1);
+            display.setText(str);
         }
-            else if(event.getSource() == one ) {
-                display.setText(display.getText() + "1");
-        }
-            else if(event.getSource() == two ) {
-                display.setText(display.getText() + "2");
-        }
-            else if(event.getSource() == three ) {
-                display.setText(display.getText() + "3");
-        }
-            else if(event.getSource() == four ) {
-                display.setText(display.getText() + "4");
-        }
-            else if(event.getSource() == five ) {
-                display.setText(display.getText() + "5");
-        }
-            else if(event.getSource() == six ) {
-                display.setText(display.getText() + "6");
-        }
-            else if(event.getSource() == seven ) {
-                display.setText(display.getText() + "7");
-        }
-            else if(event.getSource() == eight ) {
-                display.setText(display.getText() + "8");
-        }
-            else if(event.getSource() == nine ) {
-                display.setText(display.getText() + "9");
-        }   else if(event.getSource() == dot ) {
-                if(display.getText().length() > 0) {
-                display.setText(display.getText() + ".");   // to do - two dots in number ??? !!!
-                }
-        }   else if(event.getSource() == C ) {
-                display.setText("");
-                str = "";
-                operand_one = 0;
-                operand_two = 0;
-        }   else if(event.getSource() == DEL ) {
-                if (display.getText() != null && display.getText().length() > 0) {
-                    str = display.getText().substring(0,display.getText().length()-1);
-                    display.setText(str);
-                }
-                str = "";
-        }   else if(event.getSource() == plus ) {
-                if (display.getText().length() > 0) {
-                    operand_one = Float.parseFloat(display.getText());
-                    operand_length = display.getText().length();
-                    operation = 1; // ADD 
-                    display.setText(display.getText() + "+");
-                }
-        
-        }   else if(event.getSource() == multi ) {
-                if (display.getText().length() > 0) {
-                    operand_one = Float.parseFloat(display.getText());
-                    operand_length = display.getText().length();
-                    operation = 2; // MULTIPLY
-                    display.setText(display.getText() + "*");
-                }
-        
-        }   else if(event.getSource() == minus ) {
-                if (display.getText().length() > 0) {
-                    operand_one = Float.parseFloat(display.getText());
-                    operand_length = display.getText().length();
-                    operation = 3; // SUBSTRACT
-                    display.setText(display.getText() + "-");
-                }
-        
-        }   else if(event.getSource() == div ) {
-                if (display.getText().length() > 0) {
-                    operand_one = Float.parseFloat(display.getText());
-                    operand_length = display.getText().length();
-                    operation = 4; // DIVIDE
-                    display.setText(display.getText() + "/");
-                }
-        
-        }   else if(event.getSource() == pow ) {
-                if (display.getText().length() > 0) {
-                    operand_one = Float.parseFloat(display.getText());
-                    operand_length = display.getText().length();
-                    operation = 5; // POW
-                    display.setText(display.getText() + "^");
-                }
-        
-        }   else if(event.getSource() == sqrt ) {
-                if (display.getText().length() > 0) {
-                    operand_one = Float.parseFloat(display.getText());
-                    display.setText(display.getText() + "√");
-                }
-        
-        }   else if(event.getSource() == modulo ) {
-                if (display.getText().length() > 0) {
-                    operand_one = Float.parseFloat(display.getText());
-                    operand_length = display.getText().length();
-                    operation = 6; // MODULO
-                    display.setText(display.getText() + "%");
-                }
-        }   else if(event.getSource() == fact ) {
-                if (display.getText().length() > 0) {
-                    operand_one = Float.parseFloat(display.getText());
-                    display.setText("factorial funkcia");
-                }
-                operand_one = 0;
-        }   else if(event.getSource() == equal ) {
-                new_operation = true;
-                str = display.getText().substring(operand_length + 1);
-                operand_two = (Float.parseFloat(str));
-                switch(operation) {
-                    case 1: display.setText(String.valueOf(math.add(operand_one, operand_two)));
-                            break;
-                    case 2: display.setText(String.valueOf(math.multiply(operand_one, operand_two)));
-                            break;
-                    case 3: display.setText(String.valueOf(math.sub(operand_one, operand_two)));
-                            break;
-                    case 4: display.setText(String.valueOf(math.divide(operand_one, operand_two)));
-                            break;
-                    //case 5: display.setText(String.valueOf(math.pow(operand_one, operand_two)));
-                    //case 6: display.setText(String.valueOf(math.mod(operand_one, operand_two)));  
-                }
-                
+        str = "";
+    }
+
+    @FXML
+    private void CAction(ActionEvent event) {
+        display.setText("");
+        str = "";
+        operand_one = 0;
+        operand_two = 0;
+    }
+
+    @FXML
+    private void equalAction(ActionEvent event) {
+        check_operation();
+        new_operation = true;
+        if((operation <= 6) && (operation > 0)) {
+            str = display.getText().substring(operand_length + 1);
+            operand_two = (Float.parseFloat(str));
+            switch(operation) {
+                case 1: display.setText(String.valueOf(math.add(operand_one, operand_two)));
+                        break;
+                case 2: display.setText(String.valueOf(math.multiply(operand_one, operand_two)));
+                        break;
+                case 3: display.setText(String.valueOf(math.sub(operand_one, operand_two)));
+                        break;
+                case 4: display.setText(String.valueOf(math.divide(operand_one, operand_two)));
+                        break;
+                case 5: operand_two = is_int(operand_two);
+                        if(operand_two >= 0){
+                            display.setText(String.valueOf(math.pow(operand_one, (int)operand_two)));
+                        }else {
+                            display.setText("Err");
+                        }
+                        break;
+                        
+                case 6: operand_one = is_int(operand_one);
+                        operand_two = is_int(operand_two);
+                        if(operand_one >= 0 && operand_two >= 0){
+                        display.setText(String.valueOf(math.mod((int)operand_one, (int)operand_two))); 
+                        }else{
+                            display.setText("Err");
+                        }
+                        break;
             }
+        }
+        if(operation > 4) {
+            switch(operation) {
+                case 7: display.setText(String.valueOf(math.new_sqrt(operand_one)));
+                        break;
+                case 8: operand_one = is_int(operand_one);
+                        if(operand_one >= 0){
+                        display.setText(String.valueOf(math.factorial((long)operand_one)));
+                        }else{
+                            display.setText("Err");
+                        }
+                        break;
+            }  
+        }
+    }
+    
+    @FXML
+    private void dotAction(ActionEvent event) {
+        if(display.getText().length() > 0) {
+            display.setText(display.getText() + ".");   
+        }
+    }
+
+    @FXML
+    private void plusAction(ActionEvent event) {
+        if(display.getText().length() > 0) {
+            operand_one = Float.parseFloat(display.getText()); 
+            operand_length = display.getText().length();
+            operation = 1; // ADD 
+            display.setText(display.getText() + "+");
+        }
+    }
+
+    @FXML
+    private void minusAction(ActionEvent event) {
+        if(display.getText().length() > 0) {
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 3; // SUBSTRACT
+            display.setText(display.getText() + "-");
+        }
+    }
+
+    @FXML
+    private void moduloAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 6; // MODULO
+            display.setText(display.getText() + "%");
+        }
+    }
+
+    @FXML
+    private void sqrtAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            operand_one = Float.parseFloat(display.getText());
+            operation = 7;
+            display.setText("√" + display.getText());
+        }
+    }
+
+    @FXML
+    private void multiAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 2; // MULTIPLY
+            display.setText(display.getText() + "*");
+        }
+    }
+
+    @FXML
+    private void divAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 4; // DIVIDE
+            display.setText(display.getText() + "/");
+        }
+    }
+
+
+    @FXML
+    private void factAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            operand_one = Float.parseFloat(display.getText());
+            operation = 8;
+            display.setText(display.getText() + "!");
+        }
+    }
+    
+    private void check_operation() {
+        if(new_operation == true) {
+            display.setText("");
+            operand_one = 0;
+            operand_two = 0;
+            operation = 0;
+            new_operation = false;
+        }
+    }
+    private long is_int(double x) {
+        if(x % 1 == 0){
+            return (long)x;
+        }else {
+            return -1;
+        }
     }
 }

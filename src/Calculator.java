@@ -1,7 +1,8 @@
-
 /**
+ * Main class - Calculator
  *
- * @author xcrkon00
+ * @author jakub
+ * @version 1.1
  */
 import javafx.application.Application;
 import static javafx.application.Application.launch;

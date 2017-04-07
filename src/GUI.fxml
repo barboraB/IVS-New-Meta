@@ -15,91 +15,91 @@
          <padding>
             <Insets right="10.0" />
          </padding></TextField>
-      <Button fx:id="seven" layoutY="80.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="7">
+      <Button layoutY="80.0" mnemonicParsing="false" onAction="#sevenAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="7">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="eight" layoutX="100.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="8">
+      <Button layoutX="100.0" layoutY="80.0" mnemonicParsing="false" onAction="#eigthAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="8">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="nine" layoutX="200.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="9">
+      <Button layoutX="200.0" layoutY="80.0" mnemonicParsing="false" onAction="#nineAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="9">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="pow" layoutX="300.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="^">
+      <Button layoutX="300.0" layoutY="80.0" mnemonicParsing="false" onAction="#powAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="^">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="DEL" layoutX="400.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="del" stylesheets="@calculator_style.css" text="DEL">
+      <Button layoutX="400.0" layoutY="80.0" mnemonicParsing="false" onAction="#DELAction" prefHeight="80.0" prefWidth="100.0" styleClass="del" stylesheets="@calculator_style.css" text="DEL">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="C" layoutX="500.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="del" stylesheets="@calculator_style.css" text="C">
+      <Button layoutX="500.0" layoutY="80.0" mnemonicParsing="false" onAction="#CAction" prefHeight="80.0" prefWidth="100.0" styleClass="del" stylesheets="@calculator_style.css" text="C">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="equal" layoutX="500.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="160.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="=">
+      <Button layoutX="500.0" layoutY="240.0" mnemonicParsing="false" onAction="#equalAction" prefHeight="160.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="=">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="zero" layoutY="320.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="200.0" styleClass="num" stylesheets="@calculator_style.css" text="0">
+      <Button layoutY="320.0" mnemonicParsing="false" onAction="#zeroAction" prefHeight="80.0" prefWidth="200.0" styleClass="num" stylesheets="@calculator_style.css" text="0">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="four" layoutY="160.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="4">
+      <Button layoutY="160.0" mnemonicParsing="false" onAction="#fourAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="4">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="one" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="1">
+      <Button layoutY="240.0" mnemonicParsing="false" onAction="#oneAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="1">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="five" layoutX="100.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="5">
+      <Button layoutX="100.0" layoutY="160.0" mnemonicParsing="false" onAction="#fiveAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="5">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="two" layoutX="100.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="2">
+      <Button layoutX="100.0" layoutY="240.0" mnemonicParsing="false" onAction="#twoAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="2">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="six" layoutX="200.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="6">
+      <Button layoutX="200.0" layoutY="160.0" mnemonicParsing="false" onAction="#sixAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="6">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="three" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="3">
+      <Button layoutX="200.0" layoutY="240.0" mnemonicParsing="false" onAction="#threeAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text="3">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="dot" layoutX="200.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text=",">
+      <Button layoutX="200.0" layoutY="320.0" mnemonicParsing="false" onAction="#dotAction" prefHeight="80.0" prefWidth="100.0" styleClass="num" stylesheets="@calculator_style.css" text=",">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="plus" layoutX="300.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="+">
+      <Button layoutX="300.0" layoutY="160.0" mnemonicParsing="false" onAction="#plusAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="+">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="minus" layoutX="300.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="-">
+      <Button layoutX="300.0" layoutY="240.0" mnemonicParsing="false" onAction="#minusAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="-">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="modulo" layoutX="300.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="\%">
+      <Button layoutX="300.0" layoutY="320.0" mnemonicParsing="false" onAction="#moduloAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="\%">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="sqrt" layoutX="500.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="√">
+      <Button layoutX="500.0" layoutY="160.0" mnemonicParsing="false" onAction="#sqrtAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="√">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="multi" layoutX="400.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="*">
+      <Button layoutX="400.0" layoutY="160.0" mnemonicParsing="false" onAction="#multiAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="*">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="div" layoutX="400.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="/">
+      <Button layoutX="400.0" layoutY="240.0" mnemonicParsing="false" onAction="#divAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="/">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="fact" layoutX="400.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="!">
+      <Button layoutX="400.0" layoutY="320.0" mnemonicParsing="false" onAction="#factAction" prefHeight="80.0" prefWidth="100.0" styleClass="control" stylesheets="@calculator_style.css" text="!">
          <font>
             <Font size="17.0" />
          </font></Button>
