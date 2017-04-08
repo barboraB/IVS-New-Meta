@@ -22,12 +22,13 @@ import javafx.scene.control.TextField;
  */
 public class GUI_Controller implements Initializable {
     
-    private String str;
     private double operand_one;
     private double operand_two;
     private int operand_length;
     private int operation;
     private boolean new_operation;
+    private boolean mid_operation;
+    private boolean dot_flag;
     @FXML
     private TextField display;
 
@@ -38,6 +39,8 @@ public class GUI_Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.new_operation = false;
+        this.mid_operation = false;
+        this.dot_flag = false;
         this.operand_length = 0;
         this.operand_one = 0;
         this.operand_two = 0;
@@ -107,37 +110,205 @@ public class GUI_Controller implements Initializable {
     @FXML
     private void powAction(ActionEvent event) {
         if (display.getText().length() > 0) {
+            if(mid_operation == true) {
+                mid_result();
+            }      
+            mid_operation = true;
+            dot_flag = false;
             operand_one = Float.parseFloat(display.getText());
             operand_length = display.getText().length();
             operation = 5; // POW
+            new_operation = false;
             display.setText(display.getText() + "^");
         }
     }
 
     @FXML
     private void DELAction(ActionEvent event) {
-        check_operation();
+        String str = null;
         if (display.getText() != null && display.getText().length() > 0) {
-            str = display.getText().substring(0,display.getText().length()-1);
-            display.setText(str);
+            if(operation > 0 && ((operand_length + 1) == display.getText().length())){
+                operation = 0;
+                mid_operation=false;
+            }
+            if(operation != 0) {
+                str = display.getText().substring(0,display.getText().length()-1);
+                String str_sec = display.getText().substring(operand_length + 1,display.getText().length()-1);
+                if (str_sec.contains(".") == false) {
+                    dot_flag = false;
+                }
+            }else {
+                str = display.getText().substring(0,display.getText().length()-1);
+                if (str.contains(".") == false) {
+                    dot_flag = false;
+                }
+            }
+        display.setText(str);
         }
-        str = "";
     }
 
     @FXML
     private void CAction(ActionEvent event) {
         display.setText("");
-        str = "";
         operand_one = 0;
         operand_two = 0;
+        dot_flag = false;
+        new_operation = false;
+        mid_operation = false;
     }
 
     @FXML
     private void equalAction(ActionEvent event) {
+        mid_result();
+    }
+    
+    @FXML
+    private void dotAction(ActionEvent event) {
+        if(display.getText().length() > 0) {
+            if(dot_flag == false) {
+                display.setText(display.getText() + "."); 
+                dot_flag = true;
+            }//else if(){
+                
+            //}
+        }
+    }
+
+    @FXML
+    private void plusAction(ActionEvent event) {
+        if(display.getText().length() > 0) {
+            if(mid_operation == true) {
+                mid_result();
+            }
+            mid_operation = true;
+            dot_flag = false;
+            operand_one = Float.parseFloat(display.getText()); 
+            operand_length = display.getText().length();
+            operation = 1; // ADD 
+            new_operation = false;
+            display.setText(display.getText() + "+");
+        }
+    }
+
+    @FXML
+    private void minusAction(ActionEvent event) {
+        if(display.getText().length() > 0) {
+            if(mid_operation == true) {
+                mid_result();
+            }
+            mid_operation = true;
+            dot_flag = false;
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 3; // SUBSTRACT
+            new_operation = false;
+            display.setText(display.getText() + "-");
+        }
+    }
+
+    @FXML
+    private void moduloAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            if(mid_operation == true) {
+                mid_result();
+            }
+            mid_operation = true;
+            dot_flag = false;
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 6; // MODULO
+            new_operation = false;
+            display.setText(display.getText() + "%");
+        }
+    }
+
+    @FXML
+    private void sqrtAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            if(mid_operation == true) {
+                mid_result();
+            }   
+            mid_operation = true;
+            dot_flag = false;
+            operand_one = Float.parseFloat(display.getText());
+            operation = 7;
+            new_operation = false;
+            display.setText("√" + display.getText());
+        }
+    }
+
+    @FXML
+    private void multiAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            if(mid_operation == true) {
+                mid_result();
+            } 
+            mid_operation = true;
+            dot_flag = false;
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 2; // MULTIPLY
+            new_operation = false;
+            display.setText(display.getText() + "*");
+        }
+    }
+
+    @FXML
+    private void divAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            if(mid_operation == true) {
+                mid_result();
+            }
+            mid_operation = true;
+            dot_flag = false;
+            operand_one = Float.parseFloat(display.getText());
+            operand_length = display.getText().length();
+            operation = 4; // DIVIDE
+            new_operation = false;
+            display.setText(display.getText() + "/");
+        }
+    }
+
+
+    @FXML
+    private void factAction(ActionEvent event) {
+        if (display.getText().length() > 0) {
+            if(mid_operation == true) {
+                mid_result();
+            } 
+            mid_operation = true;
+            dot_flag = false;
+            operand_one = Float.parseFloat(display.getText());
+            operation = 8;
+            new_operation = false;
+            display.setText(display.getText() + "!");
+        }
+    }
+    
+    private void check_operation() {
+        if(new_operation == true) {
+            display.setText("");
+            operand_one = 0;
+            operand_two = 0;
+            operation = 0;
+            new_operation = false;
+        }
+    }
+
+    private long is_int(double x) {
+        if(x % 1 == 0){
+            return (long)x;
+        }else {
+            return -1;
+        }
+    }
+    private void mid_result() {
         check_operation();
         new_operation = true;
+        dot_flag = true;
+        mid_operation = false;
         if((operation <= 6) && (operation > 0)) {
-            str = display.getText().substring(operand_length + 1);
+            String str = display.getText().substring(operand_length + 1);
             operand_two = (Float.parseFloat(str));
             switch(operation) {
                 case 1: display.setText(String.valueOf(math.add(operand_one, operand_two)));
@@ -178,99 +349,13 @@ public class GUI_Controller implements Initializable {
                         }
                         break;
             }  
-        }
+        } 
     }
-    
-    @FXML
-    private void dotAction(ActionEvent event) {
-        if(display.getText().length() > 0) {
-            display.setText(display.getText() + ".");   
-        }
-    }
-
-    @FXML
-    private void plusAction(ActionEvent event) {
-        if(display.getText().length() > 0) {
-            operand_one = Float.parseFloat(display.getText()); 
-            operand_length = display.getText().length();
-            operation = 1; // ADD 
-            display.setText(display.getText() + "+");
-        }
-    }
-
-    @FXML
-    private void minusAction(ActionEvent event) {
-        if(display.getText().length() > 0) {
-            operand_one = Float.parseFloat(display.getText());
-            operand_length = display.getText().length();
-            operation = 3; // SUBSTRACT
-            display.setText(display.getText() + "-");
-        }
-    }
-
-    @FXML
-    private void moduloAction(ActionEvent event) {
-        if (display.getText().length() > 0) {
-            operand_one = Float.parseFloat(display.getText());
-            operand_length = display.getText().length();
-            operation = 6; // MODULO
-            display.setText(display.getText() + "%");
-        }
-    }
-
-    @FXML
-    private void sqrtAction(ActionEvent event) {
-        if (display.getText().length() > 0) {
-            operand_one = Float.parseFloat(display.getText());
-            operation = 7;
-            display.setText("√" + display.getText());
-        }
-    }
-
-    @FXML
-    private void multiAction(ActionEvent event) {
-        if (display.getText().length() > 0) {
-            operand_one = Float.parseFloat(display.getText());
-            operand_length = display.getText().length();
-            operation = 2; // MULTIPLY
-            display.setText(display.getText() + "*");
-        }
-    }
-
-    @FXML
-    private void divAction(ActionEvent event) {
-        if (display.getText().length() > 0) {
-            operand_one = Float.parseFloat(display.getText());
-            operand_length = display.getText().length();
-            operation = 4; // DIVIDE
-            display.setText(display.getText() + "/");
-        }
-    }
-
-
-    @FXML
-    private void factAction(ActionEvent event) {
-        if (display.getText().length() > 0) {
-            operand_one = Float.parseFloat(display.getText());
-            operation = 8;
-            display.setText(display.getText() + "!");
-        }
-    }
-    
-    private void check_operation() {
-        if(new_operation == true) {
-            display.setText("");
-            operand_one = 0;
-            operand_two = 0;
-            operation = 0;
-            new_operation = false;
-        }
-    }
-    private long is_int(double x) {
-        if(x % 1 == 0){
-            return (long)x;
-        }else {
-            return -1;
-        }
-    }
+    //private void change_operation() {
+      //  switch(operation) {
+        //    case 1:  display.getText().substring(0,display.getText().length()-1);
+                    
+        //}
+    //}
 }
+    
