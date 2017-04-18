@@ -3,11 +3,6 @@ import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 import java.math.BigDecimal;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -110,7 +105,7 @@ public class math {
      * @brief Division of two numbers
      * @param x divident
      * @param y divisor
-     * @return result of deviding two numbers
+     * @return result of dividing two numbers
      */
     public static double divide(double x, double y){
         return x/y;
@@ -179,9 +174,10 @@ public class math {
     /**
      * @brief Sqrt function.
      * @param x number to be rooted
-     * @return result of sqrt
+     * @param root root of the number
+     * @return result of operation
      */
-    public static double new_sqrt(double x){
-        return sqrt(x);
+    public static double root(double x, double root) {
+        return Math.pow(x, 1.0 / root);
     }
 }
