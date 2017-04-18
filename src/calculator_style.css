@@ -26,4 +26,31 @@
 }
 .control:pressed {
     -fx-background-color: #ff992d;
+    -fx-border-color: white;
+}
+.hidden {
+    -fx-background-color: white;
+}
+
+.hidden .scroll-pane {
+    -fx-background-color: white;
+}
+
+.hidden .scroll-pane .viewport{
+    -fx-background-color: white;
+}
+
+
+.hidden .scroll-pane .content{
+    -fx-background-color: white;
+}
+.fill {
+    -fx-background-color: -fx-background;
+    -fx-background-insets: 0;
+    -fx-padding: 1 3 1 3;
+}
+#about_logo {
+    -fx-background-image: url('../images/logo.png');
+    -fx-background-size: 200px;
+    -fx-background-position: center center; 
 }
