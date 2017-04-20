@@ -48,7 +48,7 @@ public class mathTest {
         assertEquals(-5, math.add(-5, 0), 0.00);
         assertEquals(275, math.add(-5, 280), 0.00);
         assertEquals(-17, math.add(-9, -8), 0.00);
-        assertEquals(9.6745, math.add(5.3895, 4.285), 0.00);
+        assertEquals(9.6745, math.add(5.3895, 4.285), 0.01);
         assertEquals(0.0, math.add(0.0, 0.0), 0.00);
         assertEquals(-10130, math.add(-57987, 47857), 0.00);          
     }
@@ -136,14 +136,164 @@ public class mathTest {
     }
 
     /**
-     * Test of new_sqrt method, of class math.
+     * Test of add method, of class math.
      */
     @Test
-    public void testNew_sqrt() {
-        System.out.println("sqrt");
-        assertEquals(2, math.new_sqrt(4), 0.00);       
-        assertEquals(0, math.new_sqrt(0), 0.00);
-        assertEquals(2.23606797749979, math.new_sqrt(5), 0.000000001);
+    public void testAdd_double_double() {
+        System.out.println("add");
+         assertEquals(2.0, math.add(1.0, 1.0), 0.00);       
+        assertEquals(0, math.add(0, 0), 0.00);
+        assertEquals(-5, math.add(-5, 0), 0.00);
+        assertEquals(275, math.add(-5, 280), 0.00);
+        assertEquals(-17, math.add(-9, -8), 0.00);
+        assertEquals(9.6745, math.add(5.3895, 4.285), 0.00);
+        assertEquals(0.0, math.add(0.0, 0.0), 0.00);
+        assertEquals(-10130, math.add(-57987, 47857), 0.00); 
+    }
+
+    /**
+     * Test of add method, of class math.
+     */
+    @Test
+    public void testAdd_long_long() {
+        System.out.println("add");
+        assertEquals(2, math.add(1, 1), 0.00);       
+        assertEquals(0, math.add(0, 0), 0.00);
+        assertEquals(-5, math.add(-5, 0), 0.00);
+        assertEquals(275, math.add(-5, 280), 0.00);
+        assertEquals(-17, math.add(-9, -8), 0.00);
+        assertEquals(0, math.add(0, 0), 0.00);
+        assertEquals(-10130, math.add(-57987, 47857), 0.00); 
+    }
+
+    /**
+     * Test of add method, of class math.
+     */
+    @Test
+    public void testAdd_double_long() {
+        System.out.println("add");
+         assertEquals(2.0, math.add(1.0, 1), 0.00);       
+        assertEquals(0.0, math.add(0.0, 0), 0.00);
+        assertEquals(-5.0, math.add(-5.0, 0), 0.00);
+        assertEquals(275.0, math.add(-5.0, 280), 0.00);
+        assertEquals(-17.0, math.add(-9.0, -8), 0.00);
+        assertEquals(0.0, math.add(0.0, 0), 0.00);
+        assertEquals(-10130.0, math.add(-57987.0, 47857), 0.00); 
+    }
+
+    /**
+     * Test of add method, of class math.
+     */
+    @Test
+    public void testAdd_long_double() {
+        System.out.println("add");
+         assertEquals(2.0, math.add(1, 1.0), 0.00);       
+        assertEquals(0.0, math.add(0, 0.0), 0.00);
+        assertEquals(-5.0, math.add(-5, 0.0), 0.00);
+        assertEquals(275.0, math.add(-5, 280.0), 0.00);
+        assertEquals(-17.0, math.add(-9, -8.0), 0.00);
+        assertEquals(0.0, math.add(0, 0.0), 0.00);
+        assertEquals(-10130.0, math.add(-57987, 47857.0), 0.00); 
+    }
+
+    /**
+     * Test of multiply method, of class math.
+     */
+    @Test
+    public void testMultiply_double_double() {
+        System.out.println("multiply");
+        assertEquals(1.0, math.multiply(1.0, 1.0), 0.00);       
+        assertEquals(0.0, math.multiply(0.0, 0.0), 0.00);
+        assertEquals(0.0, math.multiply(-5.0, 0.0), 0.00);
+        assertEquals(-1400.0, math.multiply(-5.0, 280.0), 0.00);
+        assertEquals(72.0, math.multiply(-9.0, -8.0), 0.00);
+        assertEquals(23.0940075, math.multiply(5.3895, 4.285), 0.00);
+        assertEquals(46779859.0, math.multiply(7987.0, 5857.0), 0.00);
+    }
+
+    /**
+     * Test of multiply method, of class math.
+     */
+    @Test
+    public void testMultiply_long_long() {
+        System.out.println("multiply");
+        assertEquals(1, math.multiply(1, 1), 0.00);       
+        assertEquals(0, math.multiply(0, 0), 0.00);
+        assertEquals(0, math.multiply(-5, 0), 0.00);
+        assertEquals(-1400, math.multiply(-5, 280), 0.00);
+        assertEquals(72, math.multiply(-9, -8), 0.00);
+        assertEquals(46779859, math.multiply(7987, 5857), 0.00);
+    }
+
+    /**
+     * Test of multiply method, of class math.
+     */
+    @Test
+    public void testMultiply_long_double() {
+        assertEquals(1.0, math.multiply(1, 1.0), 0.00);       
+        assertEquals(0.0, math.multiply(0, 0.0), 0.00);
+        assertEquals(0.0, math.multiply(-5, 0.0), 0.00);
+        assertEquals(-1400.0, math.multiply(-5, 280.0), 0.00);
+        assertEquals(72.0, math.multiply(-9, -8.0), 0.00);
+        assertEquals(46779859.0, math.multiply(7987, 5857.0), 0.00);
+    }
+
+    /**
+     * Test of multiply method, of class math.
+     */
+    @Test
+    public void testMultiply_double_long() {
+        assertEquals(1.0, math.multiply(1.0, 1), 0.00);       
+        assertEquals(0.0, math.multiply(0.0, 0), 0.00);
+        assertEquals(0.0, math.multiply(-5.0, 0), 0.00);
+        assertEquals(-1400.0, math.multiply(-5.0, 280), 0.00);
+        assertEquals(72.0, math.multiply(-9.0, -8), 0.00);
+        assertEquals(46779859.0, math.multiply(7987.0, 5857), 0.00);
+    }
+
+    /**
+     * Test of pow method, of class math.
+     */
+    @Test
+    public void testPow_double_int() {
+        System.out.println("pow");
+        assertEquals(1, math.pow(1.0, 1), 0.00);       
+        assertEquals(1, math.pow(-5.0, 0), 0.00);
+        assertEquals(9765625, math.pow(-5.0, 10), 0.00);
+        assertEquals(-1953125, math.pow(-5.0, 9), 0.00);
+    }
+
+    /**
+     * Test of pow method, of class math.
+     */
+    @Test
+    public void testPow_int_int() {
+        assertEquals(1, math.pow(1, 1), 0.00);       
+        assertEquals(1, math.pow(-5, 0), 0.00);
+        assertEquals(9765625, math.pow(-5, 10), 0.00);
+        assertEquals(-1953125, math.pow(-5, 9), 0.00);
+    }
+
+    /**
+     * Test of root method, of class math.
+     */
+    @Test
+    public void testRoot() {
+        assertEquals(4, math.root(16, 2), 0.0); 
+        assertEquals(0, math.root(0, 2), 0.0); 
+        assertEquals(0, math.root(0, 3), 0.0); 
+        assertEquals(0, math.root(0, 8), 0.0); 
+        assertEquals(1, math.root(1, 2), 0.0); 
+        assertEquals(1, math.root(1, 3), 0.0); 
+        assertEquals(1, math.root(1, 8), 0.0);
+        assertEquals(2, math.root(256, 8), 0.0);
+
+        assertEquals(-1, math.root(-1, 3), 0.0);
+        assertEquals(-2, math.root(-8, 3), 0.0);
+        
+        assertEquals(-1, math.root(-5, 8), 0.0);
+        assertEquals(-1, math.root(-5, 2), 0.0);
+
     }
     
 }
