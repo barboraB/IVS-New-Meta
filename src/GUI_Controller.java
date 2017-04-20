@@ -229,14 +229,16 @@ public class GUI_Controller implements Initializable {
 
     @FXML
     private void sqrtAction(ActionEvent event) {
-        if(display.getText().length() > 0 && (! display.getText().equals("-"))) {          
+        if(display.getText().length() > 0 && (! display.getText().equals("-"))) {
+            if(operation != 0) {
+                mid_result();
+            }            
             dot_flag = false;
             reset_D = true;
             operand_one = Float.parseFloat(display.getText()); 
-            operation = 7;
-            mid_result();
-        } 
-        
+            operation = 7; // sqrt
+            OP_display.setText("√");
+        }
     }
     
     @FXML
@@ -306,48 +308,55 @@ public class GUI_Controller implements Initializable {
           }
     }
     private void mid_result() {
-        if((operation <= 6) && (operation > 0)) {
+        if((operation <= 7) && (operation > 0)) {
             operand_two = Float.parseFloat(display.getText());
+            double result = 0;
             //operand_two = is_negative(operand_two);
             switch(operation) {
-                case 1: display.setText(String.valueOf(math.add(operand_one, operand_two)));
+                case 1: result = math.add(operand_one, operand_two);
                         break;
-                case 2: display.setText(String.valueOf(math.multiply(operand_one, operand_two)));
+                case 2: result = math.multiply(operand_one, operand_two);
                         break;
-                case 3: display.setText(String.valueOf(math.sub(operand_one, operand_two)));
+                case 3: result = math.sub(operand_one, operand_two);
                         break;
-                case 4: display.setText(String.valueOf(math.divide(operand_one, operand_two)));
+                case 4: if(operand_two != 0) {
+                            result = math.divide(operand_one, operand_two);
+                        } else{
+                            display.setText("Err");
+                        }
                         break;
                 case 5: operand_two = is_int(operand_two);
                         if(operand_two >= 0){
-                            display.setText(String.valueOf(math.pow(operand_one, (int)operand_two)));
+                            result = math.pow(operand_one, (int)operand_two);
                         }else {
                             display.setText("Err");
                         }
                         break;
-                        
                 case 6: operand_one = is_int(operand_one);
                         operand_two = is_int(operand_two);
                         if(operand_one >= 0 && operand_two >= 0){
-                        display.setText(String.valueOf(math.mod((int)operand_one, (int)operand_two))); 
+                        result = math.mod((int)operand_one, (int)operand_two); 
                         }else{
                             display.setText("Err");
                         }
+                        break;
+                case 7: result = math.root(operand_one, operand_two);
                         break;
             }
+            if(!"Err".equals(display.getText())) {
+                if(is_int(result) >= 0) {
+                    display.setText(String.valueOf((int)result));
+                }else {
+                    display.setText(String.valueOf(result));
+                }
+            }
         }
-        if(operation > 4) {
-            switch(operation) {
-                case 7: display.setText(String.valueOf(math.new_sqrt(operand_one)));
-                        break;
-                case 8: operand_one = is_int(operand_one);
-                        if(operand_one >= 0){
-                        display.setText(String.valueOf(math.factorial((long)operand_one)));
-                        }else{
-                            display.setText("Err");
-                        }
-                        break;
-            }  
+        if(operation == 8) {
+            if(is_int(operand_one) >= 0){
+                display.setText(String.valueOf(math.factorial((long)operand_one)));
+            }else{
+                display.setText("Err");
+            }
         }
         dot_flag = false;
         if(display.getText().contains(".") == true) {

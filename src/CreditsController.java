@@ -4,19 +4,24 @@
  * and open the template in the editor.
  */
 
+
+import java.awt.Desktop;
 import java.io.IOException;
+import static java.lang.System.exit;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -37,36 +42,44 @@ public class CreditsController implements Initializable {
     private Pane bg_pane;
     @FXML
     private TextArea bg_pane_text;
+    @FXML
+    private TextField dsg;
+    @FXML
+    private TextField crt;
+    @FXML
+    private TextField dcm;
+    @FXML
+    private Hyperlink link;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.bg_pane_text.setText("");
-        this.bg_pane_text.appendText("Created by: \n");
-        this.bg_pane_text.appendText("Barbora Blašková \n");
-        this.bg_pane_text.appendText("Jakub Crkoň \n");
-        this.bg_pane_text.appendText("Gabriel Koštialik \n");
-        this.bg_pane_text.appendText("Documented by: \n");
-        this.bg_pane_text.appendText("Barbora Blašková \n");
-        this.bg_pane_text.appendText("Gabriel Koštialik \n");
-        this.bg_pane_text.appendText("Designed by: \n");
-        this.bg_pane_text.appendText("Barbora Blašková \n");
-        this.bg_pane_text.appendText("Jakub Crkoň \n");
     }    
 
     @FXML
-    private void GNU_link(ActionEvent event){
+    private void GNU_link(ActionEvent event) {
+        try {
+           Process start = new ProcessBuilder("x-www-browser", "https://www.gnu.org/licenses/gpl-3.0.html").start();
+        } catch (IOException e) {
+           e.printStackTrace();
+        }
     }
 
     @FXML
     private void creditsAction(ActionEvent event) {
         if(creditsButton.isSelected() == true) {
             bg_pane_text.setVisible(true);
+            dsg.setVisible(true);
+            crt.setVisible(true);
+            dcm.setVisible(true);
         }
         if(creditsButton.isSelected() == false) {
             bg_pane_text.setVisible(false);
+            dsg.setVisible(false);
+            crt.setVisible(false);
+            dcm.setVisible(false);
         }
     }
 
