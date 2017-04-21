@@ -194,23 +194,21 @@ public class GUI_Controller implements Initializable {
 
     @FXML
     private void minusAction(ActionEvent event) {
-        if(display.getText().length() == 0 ||  operation != 0 ) {
+
+        if(display.getText().equals("-")) {
+            display.setText("");
+        }
+        else if(display.getText().length() == 0 || operation != 0) {
             display.setText("-");
             reset_D = false;
         }
-        else if(display.getText().equals("-")) {
-            reset();
-        }
-        else {
-            if(operation != 0) {
-                mid_result();
-            }            
+        else if((display.getText().length() > 1 && display.getText().contains("-")) || (display.getText().length() > 0 && !(display.getText().contains("-")))) {           
             dot_flag = false;
             reset_D = true;
             operand_one = Float.parseFloat(display.getText()); 
             operation = 3; // SUBSTRACT 
             OP_display.setText("-");
-        }
+         }
     }
 
     @FXML
@@ -311,7 +309,6 @@ public class GUI_Controller implements Initializable {
         if((operation <= 7) && (operation > 0)) {
             operand_two = Float.parseFloat(display.getText());
             double result = 0;
-            //operand_two = is_negative(operand_two);
             switch(operation) {
                 case 1: result = math.add(operand_one, operand_two);
                         break;
@@ -325,22 +322,22 @@ public class GUI_Controller implements Initializable {
                             display.setText("Err");
                         }
                         break;
-                case 5: operand_two = is_int(operand_two);
-                        if(operand_two >= 0){
+                case 5: if(is_int(operand_two) >= 0){
                             result = math.pow(operand_one, (int)operand_two);
                         }else {
                             display.setText("Err");
                         }
                         break;
-                case 6: operand_one = is_int(operand_one);
-                        operand_two = is_int(operand_two);
-                        if(operand_one >= 0 && operand_two >= 0){
-                        result = math.mod((int)operand_one, (int)operand_two); 
+                case 6: if(is_int(operand_one) >= 0 && is_int(operand_two) >= 0){
+                            result = math.mod((int)operand_one, (int)operand_two); 
                         }else{
                             display.setText("Err");
                         }
                         break;
                 case 7: result = math.root(operand_one, operand_two);
+                        if(result == -1) {
+                            display.setText("Err");
+                        }
                         break;
             }
             if(!"Err".equals(display.getText())) {
