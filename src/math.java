@@ -5,8 +5,9 @@ import java.math.BigDecimal;
 
 
 /**
- *
+ * @file math.java
  * @author xblask04
+ * @brief Class with mathematic operation used in calculator.
  */
 public class math {
     /**

@@ -1,8 +1,7 @@
 /**
- * Main class - Calculator
- *
- * @author jakub
- * @version 1.1
+ * @file Calculator.java
+ * @brief Main class - Calculator
+ * @author xcrkon00
  */
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -25,6 +24,7 @@ public class Calculator extends Application {
     }
 
     /**
+     * @brief Main function of the calculator.
      * @param args the command line arguments
      */
     public static void main(String[] args) {

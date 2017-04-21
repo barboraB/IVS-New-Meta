@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,8 +18,12 @@ import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
- *
- * @author jakub
+ */
+
+/**
+ * @file GUI_Controller.java
+ * @brief Contains button actions.
+ * @author xcrkon00
  */
 public class GUI_Controller implements Initializable {
 
@@ -44,8 +44,13 @@ public class GUI_Controller implements Initializable {
         this.dot_flag = false;
         this.reset_D = false;
         this.operation = 0;
-    }    
+    }
+    
     @FXML
+    /**
+     * @brief Zero button pressed.
+     * @param event todo
+     */
     private void zeroAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -56,6 +61,10 @@ public class GUI_Controller implements Initializable {
     }
     
     @FXML
+    /**
+     * @brief Button '1' pressed.
+     * @param event todo
+     */
     private void oneAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -66,6 +75,10 @@ public class GUI_Controller implements Initializable {
     }
     
     @FXML
+    /**
+     * @brief Button '2' pressed.
+     * @param event todo
+     */
     private void twoAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -74,8 +87,12 @@ public class GUI_Controller implements Initializable {
         }       
         display.setText(display.getText() + "2");
     }
- 
+    
     @FXML
+    /**
+     * @brief Button '3' pressed.
+     * @param event todo
+     */
     private void threeAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -84,8 +101,12 @@ public class GUI_Controller implements Initializable {
         }        
         display.setText(display.getText() + "3");
     }
-
+    
     @FXML
+    /**
+     * @brief Button '4' pressed.
+     * @param event todo
+     */
     private void fourAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -94,8 +115,12 @@ public class GUI_Controller implements Initializable {
         }        
         display.setText(display.getText() + "4");
     }
-
+    
     @FXML
+    /**
+     * @brief Button '5' pressed.
+     * @param event todo
+     */
     private void fiveAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -104,8 +129,12 @@ public class GUI_Controller implements Initializable {
         }        
         display.setText(display.getText() + "5");
     }
-
+    
     @FXML
+    /**
+     * @brief Button '6' pressed.
+     * @param event todo
+     */
     private void sixAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -116,6 +145,10 @@ public class GUI_Controller implements Initializable {
     }
     
     @FXML
+    /**
+     * @brief Button '7' pressed.
+     * @param event todo
+     */
     private void sevenAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -124,8 +157,12 @@ public class GUI_Controller implements Initializable {
         }        
         display.setText(display.getText() + "7");
     }
-
+    
     @FXML
+    /**
+     * @brief Button '8' pressed.
+     * @param event todo
+     */
     private void eigthAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -134,8 +171,12 @@ public class GUI_Controller implements Initializable {
         }        
         display.setText(display.getText() + "8");
     }
-
+    
     @FXML
+    /**
+     * @brief Button '9' pressed.
+     * @param event todo
+     */
     private void nineAction(ActionEvent event) {
         if(reset_D == true) {
            display.setText("");
@@ -144,8 +185,12 @@ public class GUI_Controller implements Initializable {
         }        
         display.setText(display.getText() + "9");
     }
-
+    
     @FXML
+    /**
+     * @brief Button 'DEL' pressed.
+     * @param event todo
+     */
     private void DELAction(ActionEvent event) {
         String str = "";
         if(display.getText().length() == 1 && operation != 0) {
@@ -159,26 +204,42 @@ public class GUI_Controller implements Initializable {
         }
         display.setText(str);
     }
-
+    
     @FXML
+    /**
+     * @brief Button 'CA' pressed.
+     * @param event todo
+     */
     private void CAction(ActionEvent event) {
         reset();
     }
-
+    
     @FXML
+    /**
+     * @brief Button '=' pressed.
+     * @param event todo
+     */
     private void equalAction(ActionEvent event) {
         mid_result();
     }
     
     @FXML
+    /**
+     * @brief Button '.' pressed.
+     * @param event todo
+     */
     private void dotAction(ActionEvent event) {
         if(display.getText().length() > 0 && dot_flag == false && (! display.getText().equals("-"))) {
                 display.setText(display.getText() + "."); 
                 dot_flag = true;
             }
     }
-
+    
     @FXML
+    /**
+     * @brief Button '+' pressed.
+     * @param event todo
+     */
     private void plusAction(ActionEvent event) {
         if(display.getText().length() > 0 && (! display.getText().equals("-"))) {
             if(operation != 0) {
@@ -191,8 +252,12 @@ public class GUI_Controller implements Initializable {
             OP_display.setText("+");
         }
     }
-
+    
     @FXML
+    /**
+     * @brief Button '-' pressed.
+     * @param event todo
+     */
     private void minusAction(ActionEvent event) {
 
         if(display.getText().equals("-")) {
@@ -210,8 +275,12 @@ public class GUI_Controller implements Initializable {
             OP_display.setText("-");
          }
     }
-
+    
     @FXML
+    /**
+     * @brief Button '%' pressed.
+     * @param event todo
+     */
     private void moduloAction(ActionEvent event) {
         if(display.getText().length() > 0 && (! display.getText().equals("-"))) {
             if(operation != 0) {
@@ -224,8 +293,12 @@ public class GUI_Controller implements Initializable {
             OP_display.setText("%");
         }
     }
-
+    
     @FXML
+    /**
+     * @brief Button 'sqrt' pressed.
+     * @param event todo
+     */
     private void sqrtAction(ActionEvent event) {
         if(display.getText().length() > 0 && (! display.getText().equals("-"))) {
             if(operation != 0) {
@@ -240,6 +313,10 @@ public class GUI_Controller implements Initializable {
     }
     
     @FXML
+    /**
+     * @brief Button '^' pressed.
+     * @param event todo
+     */
     private void powAction(ActionEvent event) {
         if(display.getText().length() > 0 && (! display.getText().equals("-"))) {
             if(operation != 0) {
@@ -252,8 +329,12 @@ public class GUI_Controller implements Initializable {
             OP_display.setText("^");
         }        
     }
-
+    
     @FXML
+    /**
+     * @brief Button '*' pressed.
+     * @param event todo
+     */
     private void multiAction(ActionEvent event) {
         if(display.getText().length() > 0 && (! display.getText().equals("-"))) {
             if(operation != 0) {
@@ -266,8 +347,12 @@ public class GUI_Controller implements Initializable {
             OP_display.setText("*");
         }          
     }
-
+    
     @FXML
+    /**
+     * @brief Button '/' pressed.
+     * @param event todo
+     */
     private void divAction(ActionEvent event) {
         if(display.getText().length() > 0 && (! display.getText().equals("-"))) {
             if(operation != 0) {
@@ -280,8 +365,12 @@ public class GUI_Controller implements Initializable {
             OP_display.setText("/");
         } 
     }
-
+    
     @FXML
+    /**
+     * @brief Button '!' pressed.
+     * @param event todo
+     */
     private void factAction(ActionEvent event) {
         if(display.getText().length() > 0) {        
             dot_flag = false;
@@ -291,7 +380,12 @@ public class GUI_Controller implements Initializable {
             mid_result();
         } 
     }
+    
     @FXML
+    /**
+     * @brief Button '?' pressed.
+     * @param event todo
+     */
     private void helpAction(ActionEvent event) {
         try {
             FXMLLoader helpLoader = new FXMLLoader(getClass().getResource("Help.fxml"));
@@ -305,6 +399,9 @@ public class GUI_Controller implements Initializable {
            e.printStackTrace();
           }
     }
+    /**
+     * @brief Function handling more than one operation in row. 
+     */
     private void mid_result() {
         if((operation <= 7) && (operation > 0)) {
             operand_two = Float.parseFloat(display.getText());
@@ -363,7 +460,11 @@ public class GUI_Controller implements Initializable {
         OP_display.setText("=");
         operation = 0;
     }
-    
+    /**
+     * @brief Function will chceck whether the given number is integer or not.
+     * @param x Number to be checked. 
+     * @return Integer representation of number if number was x.0, or -1 if not.
+     */
     private long is_int(double x) {
         if(x % 1 == 0){
             return (long)x;
@@ -371,7 +472,9 @@ public class GUI_Controller implements Initializable {
             return -1;
         }
     }
-    
+    /**
+     * @brief noooo idea
+     */
     private void reset() {
         display.setText("");
         OP_display.setText("");
