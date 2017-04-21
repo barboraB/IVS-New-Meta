@@ -15,6 +15,8 @@ import org.junit.BeforeClass;
 /**
  *
  * @author Gabriel
+ * @file mathTest.java
+ * @brief Tests for math.java library
  */
 public class mathTest {
     
@@ -136,7 +138,7 @@ public class mathTest {
     }
 
     /**
-     * Test of add method, of class math.
+     * Test of add method, of class math. Double, Double 
      */
     @Test
     public void testAdd_double_double() {
@@ -152,7 +154,7 @@ public class mathTest {
     }
 
     /**
-     * Test of add method, of class math.
+     * Test of add method, of class math. Long, Long
      */
     @Test
     public void testAdd_long_long() {
@@ -167,7 +169,7 @@ public class mathTest {
     }
 
     /**
-     * Test of add method, of class math.
+     * Test of add method, of class math. Double, Long
      */
     @Test
     public void testAdd_double_long() {
@@ -182,7 +184,7 @@ public class mathTest {
     }
 
     /**
-     * Test of add method, of class math.
+     * Test of add method, of class math. Long, Double
      */
     @Test
     public void testAdd_long_double() {
@@ -197,7 +199,7 @@ public class mathTest {
     }
 
     /**
-     * Test of multiply method, of class math.
+     * Test of multiply method, of class math. Double, Double
      */
     @Test
     public void testMultiply_double_double() {
@@ -212,7 +214,7 @@ public class mathTest {
     }
 
     /**
-     * Test of multiply method, of class math.
+     * Test of multiply method, of class math. Long, Long
      */
     @Test
     public void testMultiply_long_long() {
@@ -226,7 +228,7 @@ public class mathTest {
     }
 
     /**
-     * Test of multiply method, of class math.
+     * Test of multiply method, of class math. Long, Double
      */
     @Test
     public void testMultiply_long_double() {
@@ -239,7 +241,7 @@ public class mathTest {
     }
 
     /**
-     * Test of multiply method, of class math.
+     * Test of multiply method, of class math. Double, Long
      */
     @Test
     public void testMultiply_double_long() {
@@ -252,7 +254,7 @@ public class mathTest {
     }
 
     /**
-     * Test of pow method, of class math.
+     * Test of pow method, of class math. Double, Int
      */
     @Test
     public void testPow_double_int() {
@@ -264,7 +266,7 @@ public class mathTest {
     }
 
     /**
-     * Test of pow method, of class math.
+     * Test of pow method, of class math. Int, Int
      */
     @Test
     public void testPow_int_int() {
@@ -297,3 +299,5 @@ public class mathTest {
     }
     
 }
+
+/*** End of file ***/
