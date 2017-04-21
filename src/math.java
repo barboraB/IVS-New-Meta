@@ -178,6 +178,14 @@ public class math {
      * @return result of operation
      */
     public static double root(double x, double root) {
-        return Math.pow(x, 1.0 / root);
+        double result;
+        if( x >= 0 || root % 2 == 0) {
+            return Math.pow(x, 1.0 / root);
+        } else {
+            x = -x;
+            result = Math.pow(x, 1.0 / root);
+            result = -result;
+            return result;
+        }
     }
 }
