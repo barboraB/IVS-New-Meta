@@ -5,6 +5,7 @@
  */
 
 
+import static java.lang.Double.NaN;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Test;
@@ -293,8 +294,8 @@ public class mathTest {
         assertEquals(-1, math.root(-1, 3), 0.0);
         assertEquals(-2, math.root(-8, 3), 0.0);
         
-        assertEquals(-1, math.root(-5, 8), 0.0);
-        assertEquals(-1, math.root(-5, 2), 0.0);
+        assertEquals(NaN, math.root(-5, 8), 0.0);
+        assertEquals(NaN, math.root(-5, 2), 0.0);
 
     }
     
