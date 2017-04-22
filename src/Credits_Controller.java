@@ -1,34 +1,24 @@
 
-
-
-import java.awt.Desktop;
 import java.io.IOException;
-import static java.lang.System.exit;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
- * @file CreditsController.jaa
+ * @file CreditsController.java
  * @author xcrkon00
  */
-public class CreditsController implements Initializable {
+public class Credits_Controller implements Initializable {
 
     @FXML
     private Button closeAbout;
@@ -53,16 +43,22 @@ public class CreditsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
-
+    /**
+     * @brief Link pressed.
+     * @param event Represents action of pressing a button
+     * Click on link opens wanted URL in browser window.
+     */
     @FXML
-    private void GNU_link(ActionEvent event) {
-        try {
-           Process start = new ProcessBuilder("x-www-browser", "https://www.gnu.org/licenses/gpl-3.0.html").start();
-        } catch (IOException e) {
-           e.printStackTrace();
-        }
+    private void GNU_link(ActionEvent event) throws IOException {
+        
+        Process start = new ProcessBuilder("x-www-browser", "https://www.gnu.org/licenses/gpl-3.0.html").start();
     }
-
+    
+    /**
+     * @brief Credits button pressed.
+     * @param event Represents action of pressing a button
+     * Make textField with credits visible.
+     */
     @FXML
     private void creditsAction(ActionEvent event) {
         if(creditsButton.isSelected() == true) {
@@ -78,7 +74,11 @@ public class CreditsController implements Initializable {
             dcm.setVisible(false);
         }
     }
-
+    /**
+     * @brief Close button pressed.
+     * @param event Represents action of pressing a button
+     * Close Credits window.
+     */
     @FXML
     private void closeAction(ActionEvent event) {
         Stage close_stage = (Stage) closeAbout.getScene().getWindow();

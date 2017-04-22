@@ -25,13 +25,21 @@ public class Help_controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
-
+    /**
+     * @brief Button 'About' pressed.
+     * @param event Represents action of pressing a button
+     * Function close Help window.
+     */
     @FXML
     private void closeAction(ActionEvent event) {
         Stage close_stage = (Stage) closeWindow.getScene().getWindow();
         close_stage.close();
     }
-
+    /**
+     * @brief Button 'About' pressed.
+     * @param event Represents action of pressing a button
+     * Function opens Credits window.
+     */
     @FXML
     private void creditsAction(ActionEvent event) {
         try {
