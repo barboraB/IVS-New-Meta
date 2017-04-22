@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreditsController">
+<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Credits_Controller">
    <children>
       <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="165.0" layoutY="225.0" prefHeight="26.0" prefWidth="170.0" styleClass="fill" stylesheets="@calculator_style.css" text="New Meta Calculator ">
          <font>
@@ -21,7 +21,7 @@
       <TextField alignment="CENTER" editable="false" focusTraversable="false" layoutX="180.0" layoutY="277.0" prefHeight="26.0" prefWidth="140.0" styleClass="fill" stylesheets="@calculator_style.css" text="(c) New Meta 2017" />
       <TextField editable="false" focusTraversable="false" layoutX="90.0" layoutY="300.0" prefHeight="26.0" prefWidth="340.0" styleClass="fill" stylesheets="@calculator_style.css" text="This program comes with absolutely no warranty." />
       <TextField alignment="CENTER" editable="false" focusTraversable="false" layoutX="25.0" layoutY="326.0" prefHeight="26.0" prefWidth="450.0" styleClass="fill" stylesheets="@calculator_style.css" text="See the                                                                           for details." />
-      <Hyperlink fx:id="link" focusTraversable="false" layoutX="84.0" layoutY="327.0" onAction="#GNU_link" styleClass="GNU_link" stylesheets="@calculator_style.css" text="GNU General Public License, version 3 or later" textAlignment="CENTER" underline="true" />
+      <Hyperlink id="GNU_link" fx:id="link" focusTraversable="false" layoutX="84.0" layoutY="327.0" onAction="#GNU_link" stylesheets="@calculator_style.css" text="GNU General Public License, version 3 or later" textAlignment="CENTER" underline="true" />
       <Pane id="about_logo" fx:id="bg_pane" layoutX="150.0" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@calculator_style.css" />
       <ToggleButton fx:id="creditsButton" focusTraversable="false" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#creditsAction" prefWidth="100.0" text="Credits" />
       <TextArea fx:id="bg_pane_text" editable="false" focusTraversable="false" layoutX="150.0" prefHeight="251.0" prefWidth="200.0" text="&#10;&#10;Barbora Blaková&#10;Jakub Crkoň&#10;Gabariel Koštialik&#10;&#10;&#10;Barbora Blaková&#10;Gabariel Koštialik&#10;&#10;&#10;Barbora Blaková&#10;Jakub Crkoň&#10;&#10;&#10;" visible="false" wrapText="true">

@@ -54,3 +54,9 @@
     -fx-background-size: 200px;
     -fx-background-position: center center; 
 }
+#GNU_link {
+    -fx-text-fill: #ff992d;
+}
+#GNU_link:visited {
+    -fx-text-fill: #ff992d;
+}
