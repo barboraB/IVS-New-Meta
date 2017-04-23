@@ -1,0 +1,10 @@
+Rozdiely medzi plánom a skutoènosou:
+
+  - práca na projekte sa zaèala s miernym opozdením kvôli iným školským povinnostiam v tom období
+  - trochu nás opozdilo aj to, že aj keï sme už mali spravené testy, knižnicu, tak keïže sme ve¾mi ešte 
+    nevedeli pracova s gitom tak sme tam nieèo pokazili a museli niektoré veci nahráva nanovo a to nás dos spomalilo.
+  - mierny rozdiel bol aj v rozdelení úloh, keïže niektoré problémy sme vedeli vyrieši len spolu. Taktiež ak niekto 
+    nestíhal tak na niektorých úlohach robili dvaja, aby sa všetko stihlo. 
+  
+Okrem týchto rozdielov, ktoré však neboli nejak závažné, sa nijaké nevyskytli a môžeme poveda, že èasový plán a aj rozdelenie
+úloh sme s väèšej èasti naplnili.
