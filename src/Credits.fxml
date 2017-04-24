@@ -24,7 +24,7 @@
       <Hyperlink id="GNU_link" fx:id="link" focusTraversable="false" layoutX="84.0" layoutY="327.0" onAction="#GNU_link" stylesheets="@calculator_style.css" text="GNU General Public License, version 3 or later" textAlignment="CENTER" underline="true" />
       <Pane id="about_logo" fx:id="bg_pane" layoutX="150.0" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@calculator_style.css" />
       <ToggleButton fx:id="creditsButton" focusTraversable="false" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#creditsAction" prefWidth="100.0" text="Credits" />
-      <TextArea fx:id="bg_pane_text" editable="false" focusTraversable="false" layoutX="150.0" prefHeight="251.0" prefWidth="200.0" text="&#10;&#10;Barbora Blaková&#10;Jakub Crkoň&#10;Gabariel Koštialik&#10;&#10;&#10;Barbora Blaková&#10;Gabariel Koštialik&#10;&#10;&#10;Barbora Blaková&#10;Jakub Crkoň&#10;&#10;&#10;" visible="false" wrapText="true">
+      <TextArea fx:id="bg_pane_text" editable="false" focusTraversable="false" layoutX="150.0" prefHeight="251.0" prefWidth="200.0" text="&#10;&#10;Barbora Blašková&#10;Jakub Crkoň&#10;Gabariel Koštialik&#10;&#10;&#10;Barbora Blašková&#10;Gabariel Koštialik&#10;&#10;&#10;Barbora Blašková&#10;Jakub Crkoň&#10;&#10;&#10;" visible="false" wrapText="true">
          <font>
             <Font size="12.0" />
          </font>
