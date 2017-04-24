@@ -1,0 +1,3 @@
+xblask04 100 (matematicka kniznica, dokumentacia, profiling, Makefile, logo) 
+xcrkon00 100 (logika programu, GUI, instalacny subor)
+xkosti07 100 (testy matematickej kniznice, dokumentacia, uzivatelska prirucka)

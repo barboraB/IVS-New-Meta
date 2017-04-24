@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 
 /**
  *
- * @author xkosti05
+ * @author xkosti07
  * @file mathTest.java
  * @brief Tests for math.java library
  */

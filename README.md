@@ -2,15 +2,12 @@
 Prostredi
 ---------
 
-Ubuntu 32bit
 Ubuntu 64bit
-Windows 32bit
-Windows 64bit
 
 Autori
 ------
 
-Nazev tymu
+New Meta
 - xblask04 Barbora Blašková 
 - xcrkon00 Jakub Crkoň
 - xkosti05 Gabriel Koštialik

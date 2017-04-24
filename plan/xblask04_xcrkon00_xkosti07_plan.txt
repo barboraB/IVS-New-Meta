@@ -1,0 +1,24 @@
+
+Plán 2.projektu
+
+Úlohy:
+	Barbora Bla¹ková, xblask04: koordinácia práce, komunikácia s vyuèujúcimi, naprogramovanie matematickej kni¾nice, tvorba dokumentáce
+	Jakub Crkoò, xcrkon00: návrh a realizácia GUI
+	Gabriel Ko¹tialik, xkosti07: tvorba testov a testovanie
+
+
+Termíny (dátumy sú koncové):
+	-25.3.2017 - návrh projektu, funkcionality, tried..
+	-5.4.2017 - návrh testov a tvorba testov
+	-12.4.2017 - implementácia a optimalizácia
+	-19.4.2017 - dokonèovanie projektu a tvorba dokumentácie
+	-24.4.2017 - odovzdanie projektu do IS
+
+Verzovací systém:
+	GIT
+
+Komunikaèné kanály:
+	sociálne siete, Skype, Hangouts
+
+Spristúpnenie repozitára:
+	pridali sme u¾ívateµa ivskontrola do ná¹ho repozitára na github (IVS New Meta) https://github.com/barboraB/IVS-New-Meta
